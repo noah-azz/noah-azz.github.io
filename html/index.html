@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#2681d4">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO -->
+    <meta name="description" content="PLEASE ADD">
+
+    <title>Home - Great Things In Store</title>
+</head>
+
+<body>
+    <header id="header" mobile="false">
+    <a id="header-logo" href="/">
+        <img src="images/logo.jpg" alt="Site Logo">
+        <!-- <span>SiteName</span> -->
+    </a>
+
+    <div id="header-nav">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/consignment">Consignment</a></li><li><a href="/brands">Brands</a></li><li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" id="header-cta">(403) 851-5269</a>
+    </div>
+
+    <button onclick="toggleMenu()" id="open-menu-btn"><span></span><span></span></button>
+
+</header>
+
+<div id="menu-nav" onclick="toggleMenu()">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/consignment">Consignment</a></li><li><a href="/brands">Brands</a></li><li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    var menuIsOpen = false;
+    
+    // Active page
+    const activeNavLink = document.getElementById("header-nav").querySelectorAll('[href="' + window.location.pathname + '"]')[0];
+    activeNavLink.classList.add('active');
+    
+    // Mobile header
+    window.addEventListener('resize', () => {
+        resizeHeader();
+        })
+        
+        function resizeHeader() {
+            const logoWidth = document.getElementById("header-logo").getBoundingClientRect().width;
+            const navWidth = document.getElementById("header-nav").getBoundingClientRect().width;
+            
+            document.getElementById("header").setAttribute("mobile", logoWidth + navWidth > screen.width - 64 ? "true" : "false");
+            }
+            
+            resizeHeader();
+
+    // Burger button
+    function toggleMenu() {
+        menuIsOpen = !menuIsOpen;
+        document.getElementById('open-menu-btn').setAttribute('open', menuIsOpen.toString());
+        if (menuIsOpen) {
+            document.body.style.overflow = 'hidden';
+            document.getElementById('menu-nav').classList.add('menu-open');
+        } else {
+            document.getElementById('menu-nav').classList.remove('menu-open');
+            document.body.style.overflow = 'scroll';
+        }
+    }
+
+
+    // Header shadow
+    const header = document.getElementById("header");
+    const intercept = document.createElement("div");
+
+    intercept.setAttribute("data-observer-intercept", "");
+    header.before(intercept);
+
+    const observer = new IntersectionObserver(([entry]) => {
+        header.classList.toggle("shadow", !entry.isIntersecting);
+    });
+
+    observer.observe(intercept);
+</script>
+
+
+
+
+
+
+
+
+
+<div class="row hero-bg" style="background-image: url(/images/19237-farm-snakes-and-ladders-lifestyle1-lrg.jpg);">
+    <div class="text">
+        <h1>Cochrane's favourite locally-owned toy, game, puzzle and consignment shop!</h1>
+        <p">Where else can you find it all in the same store?</p>
+
+            <div class="hero-buttons">
+                <a class="btn pop  arrow" target="" href="tel:4038515211">Give Us a Call</a>
+
+
+
+
+
+
+
+
+
+
+            </div>
+    </div>
+</div>
+
+<div class="row two-col  ">
+    <div class="text">
+        <h2>Who we are</h2>
+        <p>Great Things in Store offers quality kids and women's consignment, unique baby shower and birthday gifts, baby carriers and more! Whether you are looking for a great deal on previously loved clothing or the hottest new baby product, you are sure to find treasures with every visit!</p>
+        <a class="btn   arrow" target="" href="/about">Read More</a>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <img style="aspect-ratio: 1.5;" class="smoothload" onload="this.style.opacity=1;" src="images/iStock-845630332.jpg" alt="Clothing Shoppers">
+</div>
+
+<div class="fade-img contrast" style="background-image: url(images/clothes.jpg);">
+    <div>
+        <div class="row text">
+            <h2>Consignment</h2>
+            <p>If you shop at Great Things in Store, you know what we're all about!  We look for the best brands and the best styles.  You've probably got a closet full of items that you can turn into cash.  Consigning isn't difficult, but there are a few policies and procedures that you need to be aware of before beginning.</p>
+            <a class="btn   arrow" target="" href="/consignment">Learn More</a>
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<div class="row ">
+    <h2 class="broken-line-title">Our Brands</h2>
+    <div class="info-grid">
+        <div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div><div class="text">
+    <h3>Brand</h3>
+    <p>A small blurb about the brand</p>
+</div>
+    </div>
+</div>
+
+
+
+
+
+<div class="row text-and-text contrast ">
+    <h2>Get in Touch</h2>
+    <div class="two-col">
+        <p class="text">Come find us at our physical location, send us an email, or give us a phone call...</p>
+        <p class="text">Come find us at our physical location, send us an email, or give us a phone call...</p>
+    </div>
+</div>
+
+<div class="row cta-bg" style="background-image: url(/images/iStock-1136056366.jpg);">
+    <div class="text cta-info">
+        <h1>Visit us in Cochrane, Alberta</h1>
+        <p">Find what you're looking for at our eco-friendly store</p>
+
+        <a class="btn pop  " target="_blank" href="https://www.google.com/maps/dir//80+Railway+St+E+%234,+Cochrane,+AB+T4C+2B5/@51.1872452,-114.5467679,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x537140831a9320af:0x2aa61fd43de001d3!2m2!1d-114.464373!2d51.1872662?entry=ttu">Open in Maps</a>
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+</div>
+
+<div id="footer">
+    <div class="site">
+        <div>
+            <div class="site-name">
+                <img src="/images/logo-square.png" alt="Logo">
+                <h3>Great Things In Store</h3>
+            </div>
+            <p>Great Things in Store offers quality kids and women's consignment, unique baby shower and birthday gifts, baby carriers and more! Whether you are looking for a great deal on previously loved clothing or the hottest new baby product, you are sure to find treasures with every visit!</p>
+        </div>
+
+        <div>
+            <h3>Browse</h3>
+            <a href="/">Home</a><a href="/about">About</a><a href="/consignment">Consignment</a><a href="/brands">Brands</a><a href="/contact">Contact</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <a href="">Address</a>
+            <a href="">Email</a>
+            <a href="">Phone</a>
+            <div>
+                <a aria-label="Facebook" target="_blank" href=""><span class="fb logo"></span></a>
+                <a aria-label="Instagram" target="_blank" href=""><span class="insta logo"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="legal">
+        <span>© 2024 | Great Things In Store</span>
+        <a class="dev-tag" href="mailto:noahazzariabyrne@gmail.com">Website by Noah Azzaria-Byrne</a>
+    </div>
+</div>
+
+<button onclick="backToTop()" id="back-to-top">
+    <span class="chevron-up"></span>
+</button>
+
+
+
+<script>
+    const minScroll = 40;
+    const button = document.getElementById('back-to-top');
+    window.onscroll = () => {
+        if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+            button.style.opacity = "1";
+            button.style.visibility = "visible";
+        } else {
+            button.style.opacity = "0";
+            button.style.visibility = "hidden";
+        }
+    }
+    function backToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+</script>
+</body>
+
+</html>
+

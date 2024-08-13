@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#2681d4">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- SEO -->
+    <meta name="description" content="PLEASE ADD">
+
+    <title>Consignment - Great Things In Store</title>
+</head>
+
+<body>
+    <header id="header" mobile="false">
+    <a id="header-logo" href="/">
+        <img src="images/logo.jpg" alt="Site Logo">
+        <!-- <span>SiteName</span> -->
+    </a>
+
+    <div id="header-nav">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/consignment">Consignment</a></li><li><a href="/brands">Brands</a></li><li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" id="header-cta">(403) 851-5269</a>
+    </div>
+
+    <button onclick="toggleMenu()" id="open-menu-btn"><span></span><span></span></button>
+
+</header>
+
+<div id="menu-nav" onclick="toggleMenu()">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li><li><a href="/about">About</a></li><li><a href="/consignment">Consignment</a></li><li><a href="/brands">Brands</a></li><li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script>
+    var menuIsOpen = false;
+    
+    // Active page
+    const activeNavLink = document.getElementById("header-nav").querySelectorAll('[href="' + window.location.pathname + '"]')[0];
+    activeNavLink.classList.add('active');
+    
+    // Mobile header
+    window.addEventListener('resize', () => {
+        resizeHeader();
+        })
+        
+        function resizeHeader() {
+            const logoWidth = document.getElementById("header-logo").getBoundingClientRect().width;
+            const navWidth = document.getElementById("header-nav").getBoundingClientRect().width;
+            
+            document.getElementById("header").setAttribute("mobile", logoWidth + navWidth > screen.width - 64 ? "true" : "false");
+            }
+            
+            resizeHeader();
+
+    // Burger button
+    function toggleMenu() {
+        menuIsOpen = !menuIsOpen;
+        document.getElementById('open-menu-btn').setAttribute('open', menuIsOpen.toString());
+        if (menuIsOpen) {
+            document.body.style.overflow = 'hidden';
+            document.getElementById('menu-nav').classList.add('menu-open');
+        } else {
+            document.getElementById('menu-nav').classList.remove('menu-open');
+            document.body.style.overflow = 'scroll';
+        }
+    }
+
+
+    // Header shadow
+    const header = document.getElementById("header");
+    const intercept = document.createElement("div");
+
+    intercept.setAttribute("data-observer-intercept", "");
+    header.before(intercept);
+
+    const observer = new IntersectionObserver(([entry]) => {
+        header.classList.toggle("shadow", !entry.isIntersecting);
+    });
+
+    observer.observe(intercept);
+</script>
+
+
+
+
+
+
+
+
+
+<div class="row subpage-title-bg">
+    <div class="subpage-title ">
+        <h2 class=" white">Consignment</h2>
+        <p>Easily drop off your items</p>
+    </div>
+</div>
+
+<div class="row">
+    <form id="appointment-booker" action="https://google.com">
+        <h2>Book a time to drop off</h2>
+
+        <span>Pick a day</span>
+        <div class="weekday-select">
+            <input required type="radio" name="date" id="date-mon" value="mon">
+            <label for="date-mon">Monday</label>
+
+            <input type="radio" name="date" id="date-tue" value="tue">
+            <label for="date-tue">Tuesday</label>
+
+            <input type="radio" name="date" id="date-wed" value="wed">
+            <label for="date-wed">Wednesday</label>
+
+            <input type="radio" name="date" id="date-thu" value="thu">
+            <label for="date-thu">Thursday</label>
+
+            <input type="radio" name="date" id="date-fri" value="fri">
+            <label for="date-fri">Friday</label>
+        </div>
+
+        <input required type="text" name="name" placeholder="Name">
+
+        <input required type="email" name="email" placeholder="Email">
+
+        <input required type="tel" name="phone" placeholder="Phone">
+
+        <input type="submit" value="Book">
+    </form>
+</div>
+
+<div id="footer">
+    <div class="site">
+        <div>
+            <div class="site-name">
+                <img src="/images/logo-square.png" alt="Logo">
+                <h3>Great Things In Store</h3>
+            </div>
+            <p>Great Things in Store offers quality kids and women's consignment, unique baby shower and birthday gifts, baby carriers and more! Whether you are looking for a great deal on previously loved clothing or the hottest new baby product, you are sure to find treasures with every visit!</p>
+        </div>
+
+        <div>
+            <h3>Browse</h3>
+            <a href="/">Home</a><a href="/about">About</a><a href="/consignment">Consignment</a><a href="/brands">Brands</a><a href="/contact">Contact</a>
+        </div>
+
+        <div>
+            <h3>Contact</h3>
+            <a href="">Address</a>
+            <a href="">Email</a>
+            <a href="">Phone</a>
+            <div>
+                <a aria-label="Facebook" target="_blank" href=""><span class="fb logo"></span></a>
+                <a aria-label="Instagram" target="_blank" href=""><span class="insta logo"></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="legal">
+        <span>© 2024 | Great Things In Store</span>
+        <a class="dev-tag" href="mailto:noahazzariabyrne@gmail.com">Website by Noah Azzaria-Byrne</a>
+    </div>
+</div>
+
+
+</body>
+
+</html>
+
